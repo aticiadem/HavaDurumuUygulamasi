@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.adematici.weatherapp.HomeFragment"
+        android:label="Ana Sayfa"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detayFragment"
+            app:destination="@id/detayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.adematici.weatherapp.DetayFragment"
+        android:label="Detaylar"
+        tools:layout="@layout/fragment_detay" >
+        <action
+            android:id="@+id/action_detayFragment_to_ayarlarFragment"
+            app:destination="@id/ayarlarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayarlarFragment"
+        android:name="com.adematici.weatherapp.AyarlarFragment"
+        android:label="Ayarlar"
+        tools:layout="@layout/fragment_ayarlar" />
+</navigation>
