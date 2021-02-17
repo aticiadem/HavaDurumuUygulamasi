@@ -1,13 +1,17 @@
 package com.adematici.weatherapp.ui
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.adematici.weatherapp.R
 import com.adematici.weatherapp.databinding.FragmentHomeBinding
 import com.adematici.weatherapp.model.WeatherModel
 import com.adematici.weatherapp.service.WeatherAPI
@@ -36,9 +40,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.let {
-            sehir = HomeFragmentArgs.fromBundle(it).sehirIsmi
-        }
+        val sp = requireActivity().getSharedPreferences("SehirIsmi",Context.MODE_PRIVATE)
+        sehir = sp.getString("sehirIsmi","Ankara").toString()
 
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         viewModel.refreshData(sehir)
@@ -56,9 +59,48 @@ class HomeFragment : Fragment() {
 
                 binding.textViewSehir.text = sehir.toUpperCase()
                 binding.textViewHavaninDurumu.text = it.weather[0].description.toUpperCase()
-                binding.textViewAnlikDerece.text = "Şu An "+it.main.temp.toInt().toString()+ " Derece"
-                binding.textViewNem.text = "Nem "+it.main.humidity.toString()
-                binding.textViewRuzgarHizi.text = "Ruzgar Hizi "+it.wind.speed.toString()
+                binding.textViewAnlikDerece.text = "Şu An ("+it.main.temp.toInt().toString()+ ") Derece"
+
+                when(it.weather[0].description){
+                    "hafif kar yağışlı" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.karli)
+                    }
+                    "sisli" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.sisli)
+                    }
+
+                    "parçalı az bulutlu" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "parçalı çok bulutlu" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "az bulutlu" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "çok bulutlu" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "kapalı" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "parçalı bulutlu" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.bulutlu)
+                    }
+                    "açık" -> {
+                        binding.imageViewHome.setImageResource(R.drawable.gunesli)
+                    }
+                    "kar yağışlı" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.karli)
+                    }
+                    "sağanak kar yağışlı" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.karli)
+                    }
+                    "karla karışık yağmurlu" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.karlakarisikyagmur)
+                    }
+                }
+
             }
         })
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer { error ->

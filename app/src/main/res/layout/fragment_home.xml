@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,6 +32,13 @@
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 
+            <ImageView
+                android:id="@+id/imageViewHome"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_home"/>
+
             <TextView
                 android:id="@+id/textViewHavaninDurumu"
                 android:layout_width="wrap_content"
@@ -48,25 +56,6 @@
                 android:text="Şu An: 30 Derece"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/textViewRuzgarHizi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Ruzgar Hizi: 35 Derece"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/textViewNem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Nem: %10"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -13,7 +13,7 @@ interface WeatherAPI {
             @Query("q") location: String,
             @Query("lang") language: String = "tr",
             @Query("units") units: String = "metric",
-            @Query("appid") appid: String = "" // your api key
+            @Query("appid") appid: String = "a9458e21040cf27c697577112e3b7625" // your api key
     ) : Single<WeatherModel>
 
 }

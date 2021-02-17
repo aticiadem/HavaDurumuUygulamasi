@@ -13,10 +13,6 @@
         <action
             android:id="@+id/action_homeFragment_to_detayFragment"
             app:destination="@id/detayFragment" />
-        <argument
-            android:name="sehirIsmi"
-            app:argType="string"
-            android:defaultValue="Istanbul" />
     </fragment>
     <fragment
         android:id="@+id/detayFragment"
