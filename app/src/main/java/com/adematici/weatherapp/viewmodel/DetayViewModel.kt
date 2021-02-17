@@ -9,30 +9,31 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class HomeViewModel: ViewModel() {
+class DetayViewModel: ViewModel() {
 
     private val service = WeatherAPIService()
     private val compositeDisposable = CompositeDisposable()
 
-    val veriler = MutableLiveData<WeatherModel>()
     val errorMessage = MutableLiveData<Boolean>()
     val loadingMessage = MutableLiveData<Boolean>()
+    val detaylar = MutableLiveData<WeatherModel>()
 
-    fun refreshData(sehir: String){
+    fun getData(sehir: String){
         getDataFromAPI(sehir)
     }
 
     private fun getDataFromAPI(sehir: String){
-        loadingMessage.value = true
+        loadingMessage.value = false
         compositeDisposable.add(service.getData(sehir)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object: DisposableSingleObserver<WeatherModel>(){
                     override fun onSuccess(t: WeatherModel) {
-                        veriler.value = t
+                        detaylar.value = t
                         errorMessage.value = false
                         loadingMessage.value = false
                     }
+
                     override fun onError(e: Throwable) {
                         errorMessage.value = true
                         loadingMessage.value = false

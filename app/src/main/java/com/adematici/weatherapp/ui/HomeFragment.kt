@@ -68,7 +68,6 @@ class HomeFragment : Fragment() {
                     "sisli" -> {
                         binding.imageViewHome.setImageResource(R.drawable.sisli)
                     }
-
                     "parçalı az bulutlu" -> {
                         binding.imageViewHome.setImageResource(R.drawable.bulutlu)
                     }
@@ -98,6 +97,15 @@ class HomeFragment : Fragment() {
                     }
                     "karla karışık yağmurlu" ->{
                         binding.imageViewHome.setImageResource(R.drawable.karlakarisikyagmur)
+                    }
+                    "orta şiddetli yağmur" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.yagmurlu)
+                    }
+                    "şiddetli yağmur" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.yagmurlu)
+                    }
+                    "yağmurlu" ->{
+                        binding.imageViewHome.setImageResource(R.drawable.yagmurlu)
                     }
                 }
 
