@@ -1,10 +1,11 @@
-package com.adematici.weatherapp
+package com.adematici.weatherapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.adematici.weatherapp.R
 
 class DetayFragment : Fragment() {
 

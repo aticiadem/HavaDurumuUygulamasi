@@ -7,16 +7,20 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.adematici.weatherapp.HomeFragment"
+        android:name="com.adematici.weatherapp.ui.HomeFragment"
         android:label="Ana Sayfa"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_detayFragment"
             app:destination="@id/detayFragment" />
+        <argument
+            android:name="sehirIsmi"
+            app:argType="string"
+            android:defaultValue="Istanbul" />
     </fragment>
     <fragment
         android:id="@+id/detayFragment"
-        android:name="com.adematici.weatherapp.DetayFragment"
+        android:name="com.adematici.weatherapp.ui.DetayFragment"
         android:label="Detaylar"
         tools:layout="@layout/fragment_detay" >
         <action
@@ -25,7 +29,11 @@
     </fragment>
     <fragment
         android:id="@+id/ayarlarFragment"
-        android:name="com.adematici.weatherapp.AyarlarFragment"
+        android:name="com.adematici.weatherapp.ui.AyarlarFragment"
         android:label="Ayarlar"
-        tools:layout="@layout/fragment_ayarlar" />
+        tools:layout="@layout/fragment_ayarlar" >
+        <action
+            android:id="@+id/action_ayarlarFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
