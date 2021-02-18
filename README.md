@@ -4,6 +4,7 @@
 - [openweathermap](https://openweathermap.org/) 'den çekilen veriler sizlere görünür. Dilerseniz istediğiniz şehir ve ilçe verilerine de ulaşabilirsiniz.
 - Uygulamada kullanılan kütüphaneler: Retrofit, RxJava, Navigation-Fragment.
 - MVVM mimarisi kullanılarak oluşturulmuştur.
+- Uygulamayı kullanmak için [burada](https://github.com/aticiadem/HavaDurumuUygulamasi/blob/master/app/src/main/java/com/adematici/weatherapp/service/WeatherAPI.kt) 16. satıra kendi API KEY' inizi girmeyi unutmayın. 
 - Uygulama resimleri:  
 
 ![1](https://user-images.githubusercontent.com/58858983/108368760-e0673900-720b-11eb-93a1-035e2edbe8c0.jpg)
