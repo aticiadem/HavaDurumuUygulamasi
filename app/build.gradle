@@ -42,7 +42,6 @@ dependencies {
     def supportVersion = '28.0.0'
     def retrofitVersion = '2.9.0'
     def rxJavaVersion = '2.1.1'
-    def roomVersion = '2.2.6'
     def preferencesVersion = '1.1.1'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -54,14 +53,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-
     implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
-
-    implementation "androidx.room:room-runtime:$roomVersion"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    kapt "androidx.room:room-compiler:$roomVersion"
-    implementation "androidx.room:room-ktx:$roomVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
 
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.3"
