@@ -46,10 +46,10 @@ class DetayFragment : Fragment() {
                 binding.progressBar.visibility = View.GONE
                 binding.textViewError.visibility = View.GONE
 
-                binding.textViewAnlikDerece.text = "Şu An ("+it.main.temp.toInt().toString()+ ") Derece"
+                binding.textViewDerece.text = "Sıcaklık: ("+it.main.temp.toInt().toString()+") Derece"
                 binding.textViewSehir.text = sehir.toUpperCase()
-                binding.textViewHavaninDurumu.text = "Hava: "+it.weather[0].description.toUpperCase()
-                binding.textViewRuzgarHizi.text = "Rüzgar Hızı: "+it.wind.speed.toInt().toString()+" km/s"
+                //binding.textViewHavaninDurumu.text = "Hava: "+it.weather[0].description.toUpperCase()
+                binding.textViewRuzgarHizi.text = "Rüzgar Hızı: "+it.wind.speed.toInt().toString() + " km/s"
                 binding.textViewNem.text = "Nem: %"+it.main.humidity.toString()
             }
         })
